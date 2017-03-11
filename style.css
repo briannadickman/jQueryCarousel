@@ -1,0 +1,50 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: purple;
+  padding: 5px;
+}
+
+#wrapper {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.text-container {
+  width: 100%;
+  background-color: yellow;
+  padding: 5px;
+}
+
+.square-container {
+  width: 100%;
+  background-color: red;
+  padding: 5px;
+}
+
+.button-container {
+  width: 100%;
+  background-color: blue;
+  padding: 5px;
+}
+
+#square {
+  width: 20px;
+  height: 20px;
+  background-color: grey;
+  margin: 5px;
+  display: inline-block;
+}
+
+.highlight {
+  width: 50px;
+  background-color: teal;
+}
+
+button {
+
+}
