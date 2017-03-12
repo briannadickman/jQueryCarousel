@@ -1,13 +1,13 @@
 //  DEFINING VARIABLES
 var squares = peopleArray.length;
 var divArray = [];
-var index = 0;
+
 
 $(document).ready(function(){
   $("#name").text(peopleArray[0].name);
   $("#shoutout").text(peopleArray[0].shoutout);
-
   appendDivs();
+  $("div.square.0").addClass("highlight");
   addEventListeners();
 }); //end $(document).ready();
 
@@ -24,7 +24,6 @@ function appendDivs() {
     // console.log($(this).data("name"));
     // $(this).data("shoutout", peopleArray[i].shoutout);
     // console.log($(this).data("shoutout"));
-
   }
 console.log(divArray);
 
@@ -32,23 +31,58 @@ console.log(divArray);
 
 
 function addEventListeners() {
+  var index = 0;
+
   $('.button-container').on('click', '#next', function(){
-    console.log("Next Button Clicked!");
-    $("#name").text($(".square").data("name"));
-    $(this).next().addClass("highlight");
+    index++;
+      if ( index > 18 ) {
+        index = 0;
+      }
+
+    if (index === 0) {
+      $('div.square.18').removeClass("highlight");
+      } else {
+        $('.square').prev().removeClass("highlight");
+      }
+    $(divArray[index]).addClass("highlight");
+    $("#name").prev().fadeOut();
+    $("#name").fadeIn().text($(divArray[index]).data("name"));
+    $("#shoutout").text($(divArray[index]).data("shoutout"));
+    $("#count").text(($(divArray[index]).data("id") + 1));
 
   });
 
   $('.button-container').on('click', '#prev', function(){
-    console.log("Prev Button Clicked!");
-    $('.square').prev().removeClass("highlight");
+    index--;
+      if ( index < 0 ) {
+        index = 18;
+      }
+
+    if (index === 17) {
+      $('div.square.18').removeClass("highlight");
+      } else {
+        $('.square').prev().removeClass("highlight");
+      }
+    $(divArray[index]).addClass("highlight");
+    $("#name").text($(divArray[index]).data("name"));
+    $("#shoutout").text($(divArray[index]).data("shoutout"));
+    $("#count").text(($(divArray[index]).data("id") + 1));
+
   });
 
+//  Select on click  //
   $(".square-container").on("click", "div", function(){
-
+    index = $(this).data("id");
+      if (index) {
+        $(".square").removeClass("highlight");
+        $(this).addClass("highlight");
+      } else if (index === 0) {
+        $(".square").removeClass("highlight");
+        $(this).addClass("highlight");
+      }
     $("#name").text($(this).data("name"));
     $("#shoutout").text($(this).data("shoutout"));
     $("#count").text(($(this).data("id") + 1));
-    $(this).addClass("highlight");
+
   });
 }

@@ -1,11 +1,18 @@
 html, body {
   margin: 0;
   padding: 0;
+  background-color: #f4f4f4;
+  color:  #373737;
+  font-family: 'Raleway', sans-serif;
 }
 
 header {
-  background-color: purple;
-  padding: 5px;
+  background-color: #373737;
+  color: #f5f5f5;
+  padding: 15px;
+  font-family: 'Diplomata SC', cursive;
+  letter-spacing: 3px;
+  font-size: 16px;
 }
 
 #wrapper {
@@ -14,34 +21,68 @@ header {
   text-align: center;
 }
 
+.bodywrap {
+  background-color: #f4f4f4;
+}
+
 .text-container {
-  width: 100%;
-  background-color: yellow;
+  width: 75%;
+  height: 150px;
+  margin: 0 auto;
+  background-color: #f4f4f4;
+  padding: 75px;
+}
+
+.count-tainer {
   padding: 5px;
+  background-color: #f4f4f4;
+  width: 100%;
 }
 
 .square-container {
   width: 100%;
-  background-color: red;
-  padding: 5px;
+  background-color: #f4f4f4;
+  padding: 25px;
 }
 
 .button-container {
   width: 100%;
-  background-color: blue;
-  padding: 5px;
+  background-color: #c0b283;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
 }
 
 .square {
   width: 20px;
   height: 20px;
-  background-color: grey;
+  background-color: #dcd0c0;
   margin: 5px;
   display: inline-block;
+  border-radius: 2px;
 }
 
 .highlight {
-  background-color: teal;
+  background-color: #c0b283;
+}
+
+p {
+  font-size: 20px;
+}
+
+#name {
+  font-weight: bold;
+  padding: 10px;
+  font-size: 26px;
+}
+
+#shoutout {
+  padding: 15px;
+}
+
+.stylecount {
+  font-size: 16px;
+  font-weight: bold;
 }
 
 button {
