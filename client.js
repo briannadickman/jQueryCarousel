@@ -19,11 +19,6 @@ function appendDivs() {
     $el.data({"id": i, "name": peopleArray[i].name, "shoutout": peopleArray[i].shoutout});
     console.log($el.data());
     divArray.push($el);
-    //
-    // $(this).data("name", peopleArray[i].name);
-    // console.log($(this).data("name"));
-    // $(this).data("shoutout", peopleArray[i].shoutout);
-    // console.log($(this).data("shoutout"));
   }
 console.log(divArray);
 
@@ -33,7 +28,17 @@ console.log(divArray);
 function addEventListeners() {
   var index = 0;
 
+//   NEXT BUTTON   //
   $('.button-container').on('click', '#next', function(){
+    $("#name").text($(divArray[index]).data("name")).fadeOut(function(){
+      $("#name").fadeIn().text($(divArray[index]).data("name"));
+    });
+
+    $("#shoutout").text($(divArray[index]).data("shoutout")).fadeOut(function(){
+      $("#shoutout").fadeIn().text($(divArray[index]).data("shoutout"));
+    });
+    $("#count").text(($(divArray[index]).data("id") + 1));
+
     index++;
       if ( index > 18 ) {
         index = 0;
@@ -45,14 +50,21 @@ function addEventListeners() {
         $('.square').prev().removeClass("highlight");
       }
     $(divArray[index]).addClass("highlight");
-    $("#name").prev().fadeOut();
-    $("#name").fadeIn().text($(divArray[index]).data("name"));
-    $("#shoutout").text($(divArray[index]).data("shoutout"));
-    $("#count").text(($(divArray[index]).data("id") + 1));
-
   });
 
+
+//   PREV BUTTON   //
   $('.button-container').on('click', '#prev', function(){
+    $("#name").text($(divArray[index]).data("name")).fadeOut(function(){
+      $("#name").fadeIn().text($(divArray[index]).data("name"));
+    });
+
+    $("#shoutout").text($(divArray[index]).data("shoutout")).fadeOut(function(){
+      $("#shoutout").fadeIn().text($(divArray[index]).data("shoutout"));
+    });
+
+    $("#count").text(($(divArray[index]).data("id") + 1));
+
     index--;
       if ( index < 0 ) {
         index = 18;
@@ -64,13 +76,10 @@ function addEventListeners() {
         $('.square').prev().removeClass("highlight");
       }
     $(divArray[index]).addClass("highlight");
-    $("#name").text($(divArray[index]).data("name"));
-    $("#shoutout").text($(divArray[index]).data("shoutout"));
-    $("#count").text(($(divArray[index]).data("id") + 1));
-
   });
 
-//  Select on click  //
+
+//  SELECT ON CLICK  //
   $(".square-container").on("click", "div", function(){
     index = $(this).data("id");
       if (index) {
