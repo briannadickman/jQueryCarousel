@@ -32,7 +32,7 @@ header {
   padding: 5px;
 }
 
-#square {
+.square {
   width: 20px;
   height: 20px;
   background-color: grey;
@@ -41,7 +41,6 @@ header {
 }
 
 .highlight {
-  width: 50px;
   background-color: teal;
 }
 
