@@ -37,7 +37,6 @@ function addEventListeners() {
     $("#shoutout").text($(divArray[index]).data("shoutout")).fadeOut(function(){
       $("#shoutout").fadeIn().text($(divArray[index]).data("shoutout"));
     });
-    $("#count").text(($(divArray[index]).data("id") + 1));
 
     index++;
       if ( index > 18 ) {
@@ -50,6 +49,8 @@ function addEventListeners() {
         $('.square').prev().removeClass("highlight");
       }
     $(divArray[index]).addClass("highlight");
+
+      $("#count").text(($(divArray[index]).data("id") + 1));
   });
 
 
@@ -63,8 +64,6 @@ function addEventListeners() {
       $("#shoutout").fadeIn().text($(divArray[index]).data("shoutout"));
     });
 
-    $("#count").text(($(divArray[index]).data("id") + 1));
-
     index--;
       if ( index < 0 ) {
         index = 18;
@@ -76,6 +75,8 @@ function addEventListeners() {
         $('.square').prev().removeClass("highlight");
       }
     $(divArray[index]).addClass("highlight");
+
+        $("#count").text(($(divArray[index]).data("id") + 1));
   });
 
 
