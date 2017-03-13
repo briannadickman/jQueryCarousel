@@ -86,5 +86,11 @@ p {
 }
 
 button {
-
+  margin: 0 10px 0 0;
+  padding: 5px 15px 5px 15px;
+  background-color: #373737;
+  color: #f4f4f4;
+  border: solid 2px #dcd0c0;
+  text-transform: lowercase;
+  font-size: 12px;
 }

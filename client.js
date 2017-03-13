@@ -8,7 +8,10 @@ $(document).ready(function(){
   $("#shoutout").text(peopleArray[0].shoutout);
   appendDivs();
   $("div.square.0").addClass("highlight");
-  addEventListeners();
+  addNextListener();
+  addPrevListener();
+  onClick();
+  setInterval(changeContent, 10000);
 }); //end $(document).ready();
 
 
@@ -22,38 +25,70 @@ function appendDivs() {
   }
 console.log(divArray);
 
+// if ($(".button-container").on("click", "button")) {
+//   clearInterval(changeContent);
+//   timer = setInterval(changeContent, 10000);
+//   }
 } // end appendDivs function();
 
+var index = 0;
 
-function addEventListeners() {
-  var index = 0;
-
-//   NEXT BUTTON   //
-  $('.button-container').on('click', '#next', function(){
-    $("#name").text($(divArray[index]).data("name")).fadeOut(function(){
-      $("#name").fadeIn().text($(divArray[index]).data("name"));
-    });
-
-    $("#shoutout").text($(divArray[index]).data("shoutout")).fadeOut(function(){
-      $("#shoutout").fadeIn().text($(divArray[index]).data("shoutout"));
-    });
-
-    index++;
-      if ( index > 18 ) {
-        index = 0;
-      }
-
-    if (index === 0) {
-      $('div.square.18').removeClass("highlight");
-      } else {
-        $('.square').prev().removeClass("highlight");
-      }
-    $(divArray[index]).addClass("highlight");
-
-      $("#count").text(($(divArray[index]).data("id") + 1));
+function changeContent(){
+  $("#name").text($(divArray[index]).data("name")).fadeOut(function(){
+    $("#name").fadeIn().text($(divArray[index]).data("name"));
   });
 
+  $("#shoutout").text($(divArray[index]).data("shoutout")).fadeOut(function(){
+    $("#shoutout").fadeIn().text($(divArray[index]).data("shoutout"));
+  });
 
+  index++;
+    if ( index > 18 ) {
+      index = 0;
+    }
+
+  if (index === 0) {
+    $('div.square.18').removeClass("highlight");
+    } else {
+    $('.square').prev().removeClass("highlight");
+    }
+  $(divArray[index]).addClass("highlight");
+    $("#count").text(($(divArray[index]).data("id") + 1));
+}
+
+
+function addNextListener() {
+  $('.button-container').on('click', '#next', function(){
+     changeContent();
+   });
+ }
+//  var index = 0;
+
+//   NEXT BUTTON   //
+
+  //   $("#name").text($(divArray[index]).data("name")).fadeOut(function(){
+  //     $("#name").fadeIn().text($(divArray[index]).data("name"));
+  //   });
+  //
+  //   $("#shoutout").text($(divArray[index]).data("shoutout")).fadeOut(function(){
+  //     $("#shoutout").fadeIn().text($(divArray[index]).data("shoutout"));
+  //   });
+  //
+  //   index++;
+  //     if ( index > 18 ) {
+  //       index = 0;
+  //     }
+  //
+  //   if (index === 0) {
+  //     $('div.square.18').removeClass("highlight");
+  //     } else {
+  //       $('.square').prev().removeClass("highlight");
+  //     }
+  //   $(divArray[index]).addClass("highlight");
+  //     $("#count").text(($(divArray[index]).data("id") + 1));
+  // });
+
+function addPrevListener() {
 //   PREV BUTTON   //
   $('.button-container').on('click', '#prev', function(){
     $("#name").text($(divArray[index]).data("name")).fadeOut(function(){
@@ -75,11 +110,11 @@ function addEventListeners() {
         $('.square').prev().removeClass("highlight");
       }
     $(divArray[index]).addClass("highlight");
-
         $("#count").text(($(divArray[index]).data("id") + 1));
   });
+}
 
-
+function onClick(){
 //  SELECT ON CLICK  //
   $(".square-container").on("click", "div", function(){
     index = $(this).data("id");
