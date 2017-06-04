@@ -1,21 +1,25 @@
-#Weekend Challenge 01
+# jQuery/Javascript Student Carousel
+#### Weekend Coding Challenge
 
-Welcome to your first-weekend challenge!
+https://briannadickman.github.io/jQuery-Carousel/
 
-We have created a Javascript file that has an array of Objects. Each one of you is represented as an object with some shout out feedback given to you by your peers! Awesome right?
+This application was created as a weekend coding challenge, and is used to display the names and feedback for each student in the cohort. The carousel can be navigated with the buttons at the bottom, or will automatically advance after 10 seconds, looping back to the beginning once it reaches the last slide.
 
-What I would like to see on the DOM, is one person at a time represented by showing their name and their shout out. On the screen should also be "Prev" and "Next" buttons, that when pressed, show the information for the next or previous person. These should wrap - "prev" when on the first person should wrap around to show the last person and vice versa. 
+## Getting Started
 
-Also on the DOM should be a display showing the number of people and which is being currently viewed (eg. "2/20")
+Simply navigate to the above link!
 
-When a person is displayed, show their name (first & last) and their shout out. Only one person should be shown at any given time. 
+### Prerequisites & Installing
 
-Possible look for the final application:
+No prerequisites or installation needed!
 
-http://i.imgur.com/9Dkkrci.png
 
-###HARD MODE
-Include a fade out and fade in animation in-between transitioning people.
+## Built With
 
-###PRO MODE
-Include a timer that moves to the next person if the user is not clicking on next or prev. If the user clicks on next or prev, the timer should be reset. The timer should transition between people every 10 seconds. 
+* [HTML / CSS] 
+* [Javascript] (https://www.javascript.com/) 
+* [jQuery] (https://jquery.com/)
+
+## Authors
+
+* **Brianna Dickman** - [BriMarieDesign] (https://brimariedesign.com)
