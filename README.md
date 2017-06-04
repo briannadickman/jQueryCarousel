@@ -13,7 +13,6 @@ Simply navigate to the above link!
 
 No prerequisites or installation needed!
 
-
 ## Built With
 
 * [HTML / CSS] 
@@ -22,4 +21,4 @@ No prerequisites or installation needed!
 
 ## Authors
 
-* **Brianna Dickman** - [BriMarieDesign] (https://brimariedesign.com)
+* **Brianna Dickman** - (https://github.com/briannadickman)
